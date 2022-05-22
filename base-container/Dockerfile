@@ -20,3 +20,12 @@ RUN apt update -y
 
 # Install Vagrant
 RUN apt install vagrant
+
+# Install Windows 10 Vagrant Box
+RUN vagrant box add --box-version 2102.0.2205 gusztavvargadr/windows-10
+
+# Copy The Startup Script
+COPY docker_startup.sh .
+
+# Set The Stratup Script To Run On Startup
+ENTRYPOINT docker_startup.sh

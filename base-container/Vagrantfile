@@ -1,0 +1,6 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "gusztavvargadr/windows-10"
+    config.vm.box_version = "2102.0.2205"
+    
+    config.vm.provision :shell, path: "provision_box.sh"
+end
